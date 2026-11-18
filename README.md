@@ -35,9 +35,12 @@ from echograms import echogram, OKLab
 ds_MVBS: xr.Dataset = xr.open_dataset('path/to/data.zarr', engine='zarr')
 
 # select 24-h of Sv data
-da_Sv: xr.DataArray = ds_MVBS.Sv.sel(ping_time="2017-09-01")
+da_Sv: xr.DataArray = ds_MVBS.Sv.sel(ping_time="2017-04-26")
 
 # plot echogram
-fig, ax = plt.subplots(figsize=(20, 6))
-_ = echogram(da_Sv, OKLab(), ax=ax)
+fig, ax = plt.subplots(figsize=(10, 4), layout="constrained")
+_ = echogram(da_Sv, OKLab(), max_span=30, ax=ax, rasterized=True)
+ax.set_ylabel("Depth [m]")
 ```
+
+![](https://raw.githubusercontent.com/gaspardringuenet/fancy-echograms/main/images/echogram.svg)
