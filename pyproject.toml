@@ -1,0 +1,17 @@
+[project]
+name = "fancy-echograms"
+version = "0.1.0"
+description = "Echogram plotting and colour encodings for multifrequency echosounder data"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.0",
+    "xarray>=2024.11.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.22,<0.13"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "echograms"
