@@ -12,7 +12,7 @@ Two `Encoding` are currently implemented, both designed to represent up to three
 * `OKLab` - Uses the maximum Sv for lightness and the differences between the second and third frequencies and the first (reference) frequency for hue and chroma.
 
 > The motivation for the `OKLab` colormap comes from perceptual limitations of the `RGB`
-> representation, which has been used by deep sea ecologist. The goal is to get:
+> representation, which has been used by deep sea ecologists. The goal is to get:
 > 
 > 1. Perceptually uniform lightness mapped to max(Sv) & independent of ΔSv → L ~ max(Sv) (clipped & rescaled)
 > 2. Approx. uniform changes in color when moving in the ΔSv plane → a, b ~ ΔSv(f1), ΔSv(f2)
@@ -22,15 +22,15 @@ Two `Encoding` are currently implemented, both designed to represent up to three
 
 ![](https://raw.githubusercontent.com/gaspardringuenet/fancy-echograms/main/images/cmap_RGB.svg)
 ![](https://raw.githubusercontent.com/gaspardringuenet/fancy-echograms/main/images/cmap_OKLab.svg)
-*Multifrequency colormaps available. Red dashed line (resp. red dot) corresponds to the case in which f2 (resp. f2 and f1) is NA, which typically happens in acoustic dataset because of frequency-dependent range limitations.*
+*Multifrequency colormaps available. Red dashed line (resp. red dot) corresponds to the case in which f2 (resp. f2 and f1) is NA, which typically happens in acoustic datasets because of frequency-dependent range limitations.*
 
 ## API
 
 ```python
-import maptlotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import xarray as xr
 
-from echogams import echogram, OKLab
+from echograms import echogram, OKLab
 
 ds_MVBS: xr.Dataset = xr.open_dataset('path/to/data.zarr', engine='zarr')
 
